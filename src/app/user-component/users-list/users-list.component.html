@@ -1,0 +1,28 @@
+<p-table [value]="users" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>name</th>
+      <th>vorname</th>
+      <th>phone</th>
+      <th>email</th>
+      <th>address</th>
+      <th>detail</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user>
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.vorname }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <div *ngFor="let add of user.adress">
+          {{ add.street }} {{ add.city }} {{ add.postalCode }}
+        </div>
+      </td>
+      <td><button (click)="getDetailUser(user.name)">details</button></td>
+      <!-- <td><button (click)="updateDetailUser(user.name)">Delete</button></td> -->
+      <td><button (click)="deleteDetailUser(user.name)">Update</button></td> 
+    </tr>
+  </ng-template>
+</p-table>

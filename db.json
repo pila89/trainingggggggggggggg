@@ -1,0 +1,26 @@
+{
+    "users": [
+      {
+        "name": "duncan",
+        "vorname": "australia",
+        "phone": 123,
+        "email": "123"
+
+      },
+      {
+        "name": "xxxxxxxxxx",
+        "vorname": "australia",
+        "phone": 123,
+        "email": "123"
+
+      },
+      {
+        "name": "yyyyyyyyyyyy",
+        "vorname": "australia",
+        "phone": 123,
+        "email": "123"
+
+      }
+     
+    ]
+  }

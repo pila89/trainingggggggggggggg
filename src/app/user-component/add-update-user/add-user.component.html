@@ -1,0 +1,103 @@
+<fieldset>
+  <legend>Add User</legend>
+  <div [formGroup]="userForm">
+    <div class="card flex justify-content-center">
+      <!-- <div class="flex flex-wrap gap-3">
+        <div class="flex align-items-center">
+          <p-radioButton
+            name="herr"
+            value="herr"
+            formControlName="title"
+            inputId="herr"
+          ></p-radioButton>
+          <label for="herr" class="ml-2">Herr</label>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <div class="flex align-items-center">
+          <p-radioButton
+            name="damen"
+            value="damen"
+            formControlName="title"
+            inputId="damen"
+          ></p-radioButton>
+          <label for="damen" class="ml-2">Damen</label>
+        </div>
+      </div> -->
+    </div>
+    <div style="width: 50%">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="name">Name</label>
+        <input pInputText id="name" formControlName="name" />
+      </div>
+    </div>
+    <div style="width: 50%">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="vorname">Vorname</label>
+        <input pInputText id="vorname" formControlName="vorname" />
+      </div>
+    </div>
+    <div style="width: 50%">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="phone">Phone</label>
+        <input pInputText id="phone" formControlName="phone" />
+      </div>
+    </div>
+    <div style="width: 50%">
+      <div class="flex flex-column gap-2">
+        <label htmlFor="email">Email</label>
+        <input pInputText id="email" formControlName="email" />
+      </div>
+    </div>
+
+    <fieldset style="width: 50%">
+      <legend>Add Adresse</legend>
+      <div formArrayName="adress">
+        <fieldset
+          *ngFor="let element of addressesFormArray.controls; let i = index"
+        >
+          <legend>address {{ i + 1 }}</legend>
+          <div [formGroupName]="i">
+            <div style="width: 50%">
+              <div class="flex flex-column gap-2">
+                <label htmlFor="street">Street</label>
+                <input pInputText id="street" formControlName="street" />
+              </div>
+            </div>
+            <div style="width: 50%">
+              <div class="flex flex-column gap-2">
+                <label htmlFor="city">City</label>
+                <input pInputText id="city" formControlName="city" />
+              </div>
+            </div>
+            <div style="width: 50%">
+              <div class="flex flex-column gap-2">
+                <label htmlFor="postalCode">PostalCode</label>
+                <input pInputText id="number" formControlName="postalCode" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="card flex justify-content-center">
+        <!-- <p-button
+          label="Add address"
+          (click)="addAdress()"
+          [disabled]="!userForm.valid"
+        ></p-button>
+        <p-button label="Delete address"></p-button> -->
+      </div>
+    </fieldset>
+  </div>
+</fieldset>
+<div class="card flex justify-content-center">
+  <!-- <p-button label="Reset" (click)="resetForm()"></p-button>
+  <p-button
+    label="save"
+    (click)="save()"
+    [disabled]="!userForm.valid"
+  ></p-button>
+</div> -->
+
+<p-button label="save" (click)="save()" [disabled]="!userForm.valid"></p-button>
